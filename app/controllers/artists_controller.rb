@@ -5,6 +5,11 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    if @artist 
+      @artist
+    else 
+      redirect_to artists_path
+    end
   end
 
   def new
